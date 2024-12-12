@@ -31,7 +31,7 @@ void testResults(int size, double **matrix, double *x, double *b, int epsilon) {
       sum += matrix[i][j] * x[j];
     }
     double diffence = fabs(sum - b[i]);
-    printf("The result after substituting the obtained results in row (%d) = %.*lf(+- %.*lf) or (%.15lf%)\n\n", i + 1, epsilon, sum, epsilon, diffence, fabs(diffence / b[i] * 100));
+    printf("The result after substituting the obtained results in row (%d) = %.*lf(+- %.*lf) or (%.15lf%)\n", i + 1, epsilon, sum, epsilon, diffence, fabs(diffence / b[i] * 100));
   }
 }
 

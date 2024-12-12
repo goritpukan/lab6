@@ -26,6 +26,7 @@ int main(void) {
     double *xp = calloc(size, sizeof(double));
     if (matrix == NULL || b == NULL || x == NULL || xp == NULL) {
       printf(RED"Memory allocation error\n"RESET);
+      return 0;
     }
 
     printSeparator();
@@ -57,7 +58,7 @@ int main(void) {
     simpleIterationMethod(size, matrix, b, x, xp, epsilon);
 
     for (int i = 0; i < size; i++) {
-      printf("X(%d) = %.*lf\n\n", i + 1, epsilon, x[i]);
+      printf("X(%d) = %.*lf\n", i + 1, epsilon, x[i]);
     }
     printSeparator();
     testResults(size, matrix, x, b, epsilon);

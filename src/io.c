@@ -54,7 +54,7 @@ void fillArrayManually(double **matrix, double *b, const int size) {
         }
       }
       if (fabs(matrix[i][i]) < fabs(sum)) {
-        printf(RED"\nThe sum of the modules of the elements must be less than the module of the diagonal element"RESET);
+        printf(RED"\nThe sum of the modules of the elements must be less than the module of the diagonal element\n"RESET);
       }
     } while (fabs(matrix[i][i]) < fabs(sum));
   }
@@ -65,7 +65,7 @@ void printMatrix(double **matrix, double *b, const int size) {
   for (int i = 0; i < size; i++) {
     for (int j = 0; j < size + 1; j++) {
       if (j == size) {
-        printf(" = %lf\n\n", b[i]);
+        printf(" = %lf\n", b[i]);
       } else {
         char sign = matrix[i][j] > 0 ? '+' : '-';
         printf(" %c %13lf x_%d", j == 0 ? ' ' : sign, fabs(matrix[i][j]), j + 1);
